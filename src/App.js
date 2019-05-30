@@ -12,7 +12,9 @@ class App extends Component {
     super(props)
 
     this.state = {
-      categories:[]
+      categories:[],
+      events: []
+
     }
   }
 
@@ -24,6 +26,14 @@ class App extends Component {
     })
   }
 
+  addEventClick(newAnimal) {
+    axios.post('/api/events', newAnimal).then( res =>{
+        this.setState({
+            events:res.data
+        })
+    })
+}
+
   render() {
     return (
       <div className="App">
@@ -32,7 +42,7 @@ class App extends Component {
         {this.state.categories.map( category => {
           return (
             <div>
-              <Category category={category.category}/>
+              <Category events={this.state.events} category={category.category}/>
             </div>
           )
         })}

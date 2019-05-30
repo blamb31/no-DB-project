@@ -7,10 +7,10 @@ class Category extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            events: []
-        }
-    }
+    //     this.state = {
+    //         events: []
+    //     }
+    // }
 
     componentDidMount() {
         Axios.get('/api/events').then( res => {
@@ -19,6 +19,8 @@ class Category extends Component {
             })
         })
     }
+
+    
 
     render() {
         let {events} = this.state
@@ -35,12 +37,12 @@ class Category extends Component {
        
 
         return(
-            <div className="categoryContainer" style={{border: '2px solid black', margin: 10}}>
+            <section className="categoryContainer" style={{border: '2px solid black', margin: 10}}>
                 <h1>{`Category: ${category}`}</h1>
                 <div>
                     {filteredEvents}
                 </div>
-            </div>
+            </section>
         )
 
     }
