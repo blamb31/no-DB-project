@@ -23,12 +23,13 @@ class App extends Component {
         this.setState({
             categories: res.data
         })
-    })
+    }).catch(err => console.log(err))
+
     Axios.get('/api/events').then( res => {
       this.setState({
           events: res.data
       })
-  })
+  }).catch(err => console.log(err))
   }
 
   addEvent = (newEvent) => {
@@ -44,7 +45,15 @@ class App extends Component {
         this.setState({
             categories:res.data
         })
-    })
+    }).catch(err => console.log(err))
+  }
+
+  deleteCategory = id => {
+    Axios.delete(`/api/categories/${id}`).then( res => {
+      this.setState({
+        categories: res.data
+      })
+    }).catch(err => console.log(err))
   }
 
   render() {
@@ -55,7 +64,8 @@ class App extends Component {
         {this.state.categories.map( category => {
           return (
             <div>
-              <Category events={this.state.events} category={category.category}/>
+              {console.log(category.id)}
+              <Category key={category.id} id={category.id} deleteCategory={this.deleteCategory} events={this.state.events} category={category.category}/>
             </div>
           )
         })}
