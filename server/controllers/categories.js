@@ -19,10 +19,13 @@ let categories = [
 module.exports = {
     read: (req, res) => res.send(categories),
     create: (req, res) => {
-        console.log(req.body)
-        let newCategory = req.body
-        newCategory.id = id++
-        categories.push(newCategory)
+
+        let {category} = req.body
+        let newCat = {
+            id: id++,
+            category
+        }
+        categories.push(newCat)
 
         res.send(categories)
     },

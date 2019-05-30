@@ -12,19 +12,18 @@ class Category extends Component {
     //     }
     // }
 
-    componentDidMount() {
-        Axios.get('/api/events').then( res => {
-            this.setState({
-                events: res.data
-            })
-        })
+    // componentDidMount() {
+    //     Axios.get('/api/events').then( res => {
+    //         this.setState({
+    //             events: res.data
+    //         })
+    //     })
     }
 
     
 
     render() {
-        let {events} = this.state
-        let {category} = this.props
+        let {events, category} = this.props
         let filteredEvents = events.filter( elem => {
             return (elem.eventCategory === category)      
         }).map( event => {

@@ -24,21 +24,34 @@ class App extends Component {
             categories: res.data
         })
     })
+    Axios.get('/api/events').then( res => {
+      this.setState({
+          events: res.data
+      })
+  })
   }
 
-  addEventClick(newAnimal) {
-    axios.post('/api/events', newAnimal).then( res =>{
+  addEvent = (newEvent) => {
+    Axios.post('/api/events', newEvent).then( res =>{
         this.setState({
             events:res.data
         })
+    }).catch(err => console.log(err))
+  }
+
+  addCategory = (newCategory) => {
+    Axios.post('/api/categories', newCategory).then( res =>{
+        this.setState({
+            categories:res.data
+        })
     })
-}
+  }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Input />
+        <Input addCategory={this.addCategory} addEvent={this.addEvent} />
         {this.state.categories.map( category => {
           return (
             <div>

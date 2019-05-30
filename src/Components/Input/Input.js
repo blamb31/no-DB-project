@@ -14,7 +14,7 @@ class Input extends Component {
             eventNotes: '',
             filterEvents: '',
             eventPicture:'',
-            newCategory: ''
+            category: ''
 
         }
     }
@@ -28,9 +28,29 @@ class Input extends Component {
         console.log(this.state)
     }
 
-    
+    handleAddEventClick = () => {
+        let newEvent = this.state
+        this.props.addEvent(newEvent)
+        this.setState({
+            eventCategory: '',
+            eventName: '',
+            eventNotes:'',
+            eventDate: '',
+            eventPicture: '',
+        })
+    }
+
+    handleAddCategoryClick = () => {
+        let newCategory = this.state
+        this.props.addCategory(newCategory)
+        this.setState({
+            category: ''
+        })
+        console.log(22222222222, "hit")
+    }
 
     render() {
+        let {eventCategory, eventName, eventDate, eventNotes,filterEvents,eventPicture,category} = this.state
         return(
             <div className="container">
 
@@ -46,20 +66,22 @@ class Input extends Component {
 
                     <div className="InputDiv">
 
-                        <input 
+                        <input value={eventCategory}
                         name="eventCategory"
                         type='text' 
                         placeholder='Category'
                         className="inputBoxes"
                         onChange={this.handleChange}  />
 
-                        <input name="eventName"
+                        <input value={eventName}
+                        name="eventName"
                         type='text' 
                         placeholder='Event Name'
                         className="inputBoxes" 
                         onChange={this.handleChange} />
 
-                        <input name="eventDate"
+                        <input value={eventDate}
+                        name="eventDate"
                         type='text' 
                         placeholder='Event Date'
                         className="inputBoxes" 
@@ -69,13 +91,15 @@ class Input extends Component {
 
                     <div className="InputDiv">
 
-                        <input name="eventNotes"
+                        <input value={eventNotes}
+                        name="eventNotes"
                         type='text' 
                         placeholder='Notes'
                         className="inputBoxes" 
                         onChange={this.handleChange} />
 
-                        <input name="eventPicture"
+                        <input value={eventPicture}
+                        name="eventPicture"
                         type='text' 
                         placeholder='Picture URL'
                         className="inputBoxes" 
@@ -85,7 +109,9 @@ class Input extends Component {
                     </div>
 
                     <div className="InputDiv">
-                        <input name="newCategory"
+                        
+                        <input value={category}
+                        name="category"
                         type='text' 
                         placeholder='New Category'
                         className="inputBoxes" 
@@ -105,9 +131,9 @@ class Input extends Component {
 
                 <div className="buttonDiv">
 
-                    <button className="buttons">Add New Event</button>
+                    <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
 
-                    <button className="buttons">Add New Category</button>
+                    <button className="buttons" onClick={this.handleAddCategoryClick}>Add New Category</button>
 
                     <button className="buttons">Search Events</button>
                 
