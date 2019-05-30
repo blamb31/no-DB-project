@@ -40,5 +40,31 @@ let events = [
 ]
 
 module.exports = {
-    read: (req, res) => res.send(events)
+    read: (req, res) => res.send(events),
+    create: (req, res) => {
+        let newEvent = req.body
+        newEvent.id = id++
+        events.push(newEvent)
+        res.send(events)
+    },
+    delete: (req, res) => {
+        let {id} = req.params
+        let index = events.findIndex( (event) =>{
+            return +event.id === +id
+        } )
+        events.splice(index, 1)
+        res.send(events)
+    },
+    update: (req, res) => {
+        let {id} = req.params
+        let updatedEvent = req.body
+        updatedEvent.id = id
+        let index = events.findIndex( event => {
+           return +event.id === +id 
+        })
+        events.splice(index, 1, updatedEvent)
+        res.send(events)
+
+    }
+
 }

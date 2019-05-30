@@ -2,7 +2,7 @@ import React from 'react'
 import './Event.css'
 
 function Event(props) {
-    let {eventCategory,
+    let {
     eventName,
     eventDate,
     eventNotes,

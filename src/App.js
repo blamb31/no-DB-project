@@ -4,6 +4,8 @@ import Category from './Components/Category/Category'
 
 import Axios from 'axios';
 import Header from './Components/Header/Header'
+import Input from './Components/Input/Input'
+
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Input />
         {this.state.categories.map( category => {
           return (
             <div>

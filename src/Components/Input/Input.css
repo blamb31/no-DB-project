@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.inputContainer {
+    display: flex;
+}
+
+.InputDiv {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    
+}
+
+.inputBoxes {
+    margin: 25px;
+}
+
+.title {
+    text-decoration: underline black;
+    letter-spacing: 3px;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    
+}
+
+#newEvent {
+    width: 66%;
+    display: flex;
+    justify-content: center;
+}
+
+#newCategory {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buttons {
+    border-radius: 15px;
+    border: none;
+    padding: 5px;
+}

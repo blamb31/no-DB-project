@@ -9,7 +9,7 @@ function Header(props) {
                 <img id="logo"  src={logo}/>
             </div>
             <div id="companyName">
-                <h1 >Event Manager</h1>
+                <h1 >Event Tracker</h1>
             </div>
 
         </header>
