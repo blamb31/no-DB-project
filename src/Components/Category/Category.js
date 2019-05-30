@@ -7,6 +7,9 @@ class Category extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            editMode: true
+        }
 
     }
 
@@ -28,7 +31,11 @@ class Category extends Component {
         }).map( event => {
             return (
                 <div>
-                    <Event key={event.id} id={event.id} deleteEvent={this.handleDeleteEventClick} event={event} />
+                    <Event editMode={this.state.editMode} 
+                    key={event.id} 
+                    id={event.id} 
+                    deleteEvent={this.handleDeleteEventClick} 
+                    event={event} />
                 </div>
             )
         })

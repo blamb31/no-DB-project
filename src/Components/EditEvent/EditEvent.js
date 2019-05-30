@@ -1,20 +1,19 @@
 import React, {Component} from 'react'
 
-import './Input.css'
+import './EditEvent.css'
 
 class Input extends Component {
     constructor(props){
         super(props)
 
-        this.state = {
-            eventCategory: '',
-            eventName: '',
-            eventDate: '',
-            eventNotes: '',
-            filterEvents: '',
-            eventPicture:'',
-            /* New*/category: ''
+        let {event} = this.props
 
+        this.state ={
+            eventCategory: event.eventCategory,
+            eventName: event.eventName,
+            eventNotes:event.eventNotes,
+            eventDate: event.eventDate,
+            eventPicture: event.eventPicture,
         }
     }
 
@@ -26,6 +25,10 @@ class Input extends Component {
         })
         console.log(this.state)
     }
+
+    
+        
+    
 
     handleAddEventClick = () => {
         let newEvent = this.state
@@ -50,16 +53,15 @@ class Input extends Component {
 
     render() {
         let {eventCategory, eventName, eventDate, eventNotes,filterEvents,eventPicture,category} = this.state
+        
+        
         return(
-            <div className="container">
+            
+            <div className="editContainer">
 
-                <div className="title">
 
-                    <h1 id="newEvent" className="inputBoxes">New Event</h1>
+                <h1 id="newEvent " className=" title ">Edit Event</h1>
 
-                    <h1 id="newCategory" className="inputBoxes">New Category</h1>
-
-                </div>
                 
                 <div className="inputContainer">
 
@@ -107,7 +109,7 @@ class Input extends Component {
                         
                     </div>
 
-                    <div className="InputDiv">
+                    {/* <div className="InputDiv">
                         
                         <input value={category}
                         name="category"
@@ -124,17 +126,20 @@ class Input extends Component {
                         className="inputBoxes" 
                         onChange={this.handleChange} />
                         
-                    </div>
+                    </div> */}
 
                 </div>
 
                 <div className="buttonDiv">
 
-                    <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
+                    <button class="button">Delete</button>
+                        <button class="button">Edit</button>
+
+                    {/* <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
 
                     <button className="buttons" onClick={this.handleAddCategoryClick}>Add New Category</button>
 
-                    <button className="buttons">Search Events</button>
+                    <button className="buttons">Search Events</button> */}
                 
                 </div>
 

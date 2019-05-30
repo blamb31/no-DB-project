@@ -72,8 +72,14 @@ class App extends Component {
         {this.state.categories.map( category => {
           return (
             <div>
-              {console.log(category.id)}
-              <Category deleteEvent={this.deleteEvent} key={category.id} id={category.id} deleteCategory={this.deleteCategory} events={this.state.events} category={category.category}/>
+              <Category 
+              deleteEvent={this.deleteEvent} 
+              key={category.id} 
+              id={category.id} 
+              deleteCategory={this.deleteCategory} 
+              events={this.state.events} 
+              category={category.category}/>
+              
             </div>
           )
         })}

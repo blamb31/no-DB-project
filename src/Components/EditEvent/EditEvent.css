@@ -1,0 +1,29 @@
+.editContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inputDiv {
+    width: 100%;
+    /* margin: 10px; */
+}
+
+.inputBoxes {
+    width: 100%;
+}
+
