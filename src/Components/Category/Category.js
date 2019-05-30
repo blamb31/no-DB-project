@@ -7,10 +7,6 @@ class Category extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            editMode: true
-        }
-
     }
 
     handleDeleteCategoryClick = () => {
@@ -24,11 +20,7 @@ class Category extends Component {
         deleteEvent(id)
     }
 
-    toggleEdit = () => {
-        this.setState({
-            editMode: !this.state.editMode
-        })
-    }
+    
 
     render() {
         let {events, category} = this.props
@@ -38,8 +30,6 @@ class Category extends Component {
             return (
                 <div>
                     <Event 
-                    toggleEdit={this.toggleEdit}
-                    editMode={this.state.editMode} 
                     key={event.id} 
                     id={event.id} 
                     deleteEvent={this.handleDeleteEventClick} 

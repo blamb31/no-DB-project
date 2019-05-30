@@ -53,7 +53,7 @@ class Input extends Component {
 
     render() {
         let {eventCategory, eventName, eventDate, eventNotes,filterEvents,eventPicture,category} = this.state
-        let {toggleEdit, event} = this.props
+        let {toggleEdit, event, deleteEvent, id} = this.props
         
         return(
             
@@ -110,27 +110,6 @@ class Input extends Component {
                         
                     </div>
 
-                    
-
-                    {/* <div className="InputDiv">
-                        
-                        <input value={category}
-                        name="category"
-                        type='text' 
-                        placeholder='New Category'
-                        className="inputBoxes" 
-                        onChange={this.handleChange} />
-
-                        <h1 className="title" id="search">Search Events</h1>
-
-                        <input name="filterEvents"
-                        type='text' 
-                        placeholder='Search'
-                        className="inputBoxes" 
-                        onChange={this.handleChange} />
-                        
-                    </div> */}
-
                 </div>
 
                 <div id="imageDiv">
@@ -139,17 +118,13 @@ class Input extends Component {
 
                 <div className="buttonDiv">
 
-                    <button class="button">Delete</button>
+                    <button onClick={() => deleteEvent(id)} class="button">Delete</button>
                     
                     <button onClick={toggleEdit} class="button">Cancel</button>
 
                     <button>Save</button>
 
-                    {/* <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
-
-                    <button className="buttons" onClick={this.handleAddCategoryClick}>Add New Category</button>
-
-                    <button className="buttons">Search Events</button> */}
+                   
                 
                 </div>
 

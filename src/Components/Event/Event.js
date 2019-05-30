@@ -1,43 +1,55 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './Event.css'
 import EditEvent from '../EditEvent/EditEvent'
 
-function Event(props) {
-    let {
-    eventName,
-    eventDate,
-    eventNotes,
-    eventPicture} = props.event
+class Event extends Component{
 
-    let {event} = props
+    constructor(props) {
+        super(props) 
 
-    // handleDeleteClick = () => {
-    //     let {id, deleteEvent} = props.deleteEvent
-    //     deleteEvent(id)
-    // }
+        this.state = {
+            editMode: true
+        }
+    }
 
-    return(
-        <div className="eventPost" style={{borderBottom: '2px solid black'}} >
-            
-            {(props.editMode) ? 
-                <EditEvent toggleEdit={props.toggleEdit} event={event} /> 
+    toggleEdit = () => {
+        this.setState({
+            editMode: !this.state.editMode
+        })
+    }
 
-                :
-            
-            
-                <div className="postContent">
-                    <h4>{`Event Name: ${eventName}`}</h4>
-                    <h4>{`Event Date: ${eventDate}`}</h4>
-                    <h4>{`Event Notes: ${eventNotes}`}</h4>
-                    <img width={300} src={eventPicture} />
-                    <div id='buttonsDiv'>
-                        <button onClick={() => props.deleteEvent(props.id)} class="button">Delete</button>
-                        <button onClick={props.toggleEdit} class="button">Edit</button>
+    render() {
+        let {
+        eventName,
+        eventDate,
+        eventNotes,
+        eventPicture} = this.props.event
+
+        let {event} = this.props
+
+        return(
+            <div className="eventPost" style={{borderBottom: '2px solid black'}} >
+                
+                {(this.state.editMode) ? 
+                    <EditEvent id={this.props.id} deleteEvent={this.props.deleteEvent} toggleEdit={this.toggleEdit} event={event} /> 
+
+                    :
+                
+                
+                    <div className="postContent">
+                        <h4>{`Event Name: ${eventName}`}</h4>
+                        <h4>{`Event Date: ${eventDate}`}</h4>
+                        <h4>{`Event Notes: ${eventNotes}`}</h4>
+                        <img width={300} src={eventPicture} />
+                        <div id='buttonsDiv'>
+                            <button onClick={() => this.props.deleteEvent(this.props.id)} class="button">Delete</button>
+                            <button onClick={this.toggleEdit} class="button">Edit</button>
+                        </div>
                     </div>
-                </div>
-            }
-        </div>
-    )
+                }
+            </div>
+        )
+    }
 }
 
 export default Event
