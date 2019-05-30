@@ -1,0 +1,12 @@
+.eventPost {
+    border-bottom: 2px solid #eee;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.postContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
