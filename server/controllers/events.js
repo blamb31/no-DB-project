@@ -40,7 +40,20 @@ let events = [
 ]
 
 module.exports = {
-    read: (req, res) => res.send(events),
+    read: (req, res) => {
+        if(req.query.events) {
+            let queryEvents = events.filter( event => {
+                if (event.eventName.includes(req.query.events)) {
+                    return event
+                }
+            })
+        
+            res.send(queryEvents)
+        }
+        else{res.send(events)
+        }
+    },
+    
     create: (req, res) => {
         let newEvent = req.body
         newEvent.id = id++

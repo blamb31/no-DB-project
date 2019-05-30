@@ -45,7 +45,13 @@ class Input extends Component {
         this.setState({
             category: ''
         })
-        console.log(22222222222, "hit")
+    }
+
+    handleSearchEventsClick = () => {
+        this.props.filterEvents(this.state.filterEvents)
+        this.setState({
+            filterEvents: ''
+        })
     }
 
     render() {
@@ -134,7 +140,7 @@ class Input extends Component {
 
                     <button className="buttons" onClick={this.handleAddCategoryClick}>Add New Category</button>
 
-                    <button className="buttons">Search Events</button>
+                    <button className="buttons" onClick={this.handleSearchEventsClick}>Search Events</button>
                 
                 </div>
 

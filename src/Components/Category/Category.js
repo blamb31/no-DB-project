@@ -26,7 +26,10 @@ class Category extends Component {
         let {events, category, editEvent} = this.props
         let filteredEvents = events.filter( elem => {
             return (elem.eventCategory === category)      
-        }).map( event => {
+        }).sort( (a,b) =>{
+            return new Date(b.eventDate) - new Date(a.eventDate)
+        })
+        .map( event => {
             return (
                 <div>
                     <Event 

@@ -34,6 +34,15 @@ class App extends Component {
   }).catch(err => console.log(err))
   }
 
+  searchEvents = searchKeyword => {
+    console.log(searchKeyword)
+    Axios.get(`/api/events?events=${searchKeyword}`).then( res => {
+      this.setState({
+        events: res.data
+      })
+    })
+  }
+
   addEvent = (newEvent) => {
     Axios.post('/api/events', newEvent).then( res =>{
         this.setState({
@@ -78,7 +87,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Input addCategory={this.addCategory} addEvent={this.addEvent} />
+        <Input filterEvents={this.searchEvents} addCategory={this.addCategory} addEvent={this.addEvent} />
         {this.state.categories.map( category => {
           return (
             <div>
