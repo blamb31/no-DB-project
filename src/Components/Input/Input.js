@@ -83,7 +83,7 @@ class Input extends Component {
                         <input value={eventDate}
                         name="eventDate"
                         type='text' 
-                        placeholder='Event Date'
+                        placeholder='Event Date (YYYY/MM/DD)'
                         className="inputBoxes" 
                         onChange={this.handleChange} />
 

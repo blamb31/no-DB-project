@@ -7,23 +7,18 @@ class Category extends Component {
     constructor(props) {
         super(props)
 
-    //     this.state = {
-    //         events: []
-    //     }
-    // }
 
-    // componentDidMount() {
-    //     Axios.get('/api/events').then( res => {
-    //         this.setState({
-    //             events: res.data
-    //         })
-    //     })
     }
 
     handleDeleteCategoryClick = () => {
         let {id, deleteCategory} = this.props
         deleteCategory(id)
-        console.log(id)
+        
+    }
+
+    handleDeleteEventClick = (id) => {
+        let {deleteEvent} = this.props
+        deleteEvent(id)
     }
 
     render() {
@@ -33,7 +28,7 @@ class Category extends Component {
         }).map( event => {
             return (
                 <div>
-                    <Event event={event} />
+                    <Event key={event.id} id={event.id} deleteEvent={this.handleDeleteEventClick} event={event} />
                 </div>
             )
         })
