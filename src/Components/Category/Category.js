@@ -24,6 +24,12 @@ class Category extends Component {
         deleteEvent(id)
     }
 
+    toggleEdit = () => {
+        this.setState({
+            editMode: !this.state.editMode
+        })
+    }
+
     render() {
         let {events, category} = this.props
         let filteredEvents = events.filter( elem => {
@@ -31,7 +37,9 @@ class Category extends Component {
         }).map( event => {
             return (
                 <div>
-                    <Event editMode={this.state.editMode} 
+                    <Event 
+                    toggleEdit={this.toggleEdit}
+                    editMode={this.state.editMode} 
                     key={event.id} 
                     id={event.id} 
                     deleteEvent={this.handleDeleteEventClick} 

@@ -53,7 +53,7 @@ class Input extends Component {
 
     render() {
         let {eventCategory, eventName, eventDate, eventNotes,filterEvents,eventPicture,category} = this.state
-        
+        let {toggleEdit, event} = this.props
         
         return(
             
@@ -106,8 +106,11 @@ class Input extends Component {
                         className="inputBoxes" 
                         onChange={this.handleChange} />
 
+                       
                         
                     </div>
+
+                    
 
                     {/* <div className="InputDiv">
                         
@@ -130,10 +133,17 @@ class Input extends Component {
 
                 </div>
 
+                <div id="imageDiv">
+                    <img style={{width: 300}} src={event.eventPicture} />
+                </div>
+
                 <div className="buttonDiv">
 
                     <button class="button">Delete</button>
-                        <button class="button">Edit</button>
+                    
+                    <button onClick={toggleEdit} class="button">Cancel</button>
+
+                    <button>Save</button>
 
                     {/* <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
 

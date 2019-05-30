@@ -20,7 +20,7 @@ function Event(props) {
         <div className="eventPost" style={{borderBottom: '2px solid black'}} >
             
             {(props.editMode) ? 
-                <EditEvent event={event} /> 
+                <EditEvent toggleEdit={props.toggleEdit} event={event} /> 
 
                 :
             
@@ -32,7 +32,7 @@ function Event(props) {
                     <img width={300} src={eventPicture} />
                     <div id='buttonsDiv'>
                         <button onClick={() => props.deleteEvent(props.id)} class="button">Delete</button>
-                        <button class="button">Edit</button>
+                        <button onClick={props.toggleEdit} class="button">Edit</button>
                     </div>
                 </div>
             }
