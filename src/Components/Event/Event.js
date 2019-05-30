@@ -8,7 +8,7 @@ class Event extends Component{
         super(props) 
 
         this.state = {
-            editMode: true
+            editMode: false
         }
     }
 
@@ -23,7 +23,7 @@ class Event extends Component{
         eventName,
         eventDate,
         eventNotes,
-        eventPicture} = this.props.event
+        eventPicture } = this.props.event
 
         let {event} = this.props
 
@@ -31,7 +31,7 @@ class Event extends Component{
             <div className="eventPost" style={{borderBottom: '2px solid black'}} >
                 
                 {(this.state.editMode) ? 
-                    <EditEvent id={this.props.id} deleteEvent={this.props.deleteEvent} toggleEdit={this.toggleEdit} event={event} /> 
+                    <EditEvent editEvent={this.props.editEvent} id={this.props.id} deleteEvent={this.props.deleteEvent} toggleEdit={this.toggleEdit} event={event} /> 
 
                     :
                 

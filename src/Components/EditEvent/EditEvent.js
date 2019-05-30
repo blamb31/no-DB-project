@@ -28,32 +28,28 @@ class Input extends Component {
 
     
         
-    
+        
 
-    handleAddEventClick = () => {
-        let newEvent = this.state
-        this.props.addEvent(newEvent)
-        this.setState({
-            eventCategory: '',
-            eventName: '',
-            eventNotes:'',
-            eventDate: '',
-            eventPicture: '',
-        })
+    handleEditEventClick = () => {
+        let editedEvent = this.state
+        this.props.editEvent(this.props.id, editedEvent)
+        console.log(11111, editedEvent)
+        this.props.toggleEdit()
+       
     }
 
-    handleAddCategoryClick = () => {
-        let newCategory = this.state
-        this.props.addCategory(newCategory)
-        this.setState({
-            category: ''
-        })
-        console.log(22222222222, "hit")
-    }
+    // handleAddCategoryClick = () => {
+    //     let newCategory = this.state
+    //     this.props.addCategory(newCategory)
+    //     this.setState({
+    //         category: ''
+    //     })
+    //     console.log(22222222222, "hit")
+    // }
 
     render() {
         let {eventCategory, eventName, eventDate, eventNotes,filterEvents,eventPicture,category} = this.state
-        let {toggleEdit, event, deleteEvent, id} = this.props
+        let {toggleEdit, event, deleteEvent, id, editEvent} = this.props
         
         return(
             
@@ -122,7 +118,7 @@ class Input extends Component {
                     
                     <button onClick={toggleEdit} class="button">Cancel</button>
 
-                    <button>Save</button>
+                    <button onClick={this.handleEditEventClick}>Save</button>
 
                    
                 

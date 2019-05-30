@@ -23,13 +23,14 @@ class Category extends Component {
     
 
     render() {
-        let {events, category} = this.props
+        let {events, category, editEvent} = this.props
         let filteredEvents = events.filter( elem => {
             return (elem.eventCategory === category)      
         }).map( event => {
             return (
                 <div>
                     <Event 
+                    editEvent={editEvent}
                     key={event.id} 
                     id={event.id} 
                     deleteEvent={this.handleDeleteEventClick} 

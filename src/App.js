@@ -5,6 +5,8 @@ import Category from './Components/Category/Category'
 import Axios from 'axios';
 import Header from './Components/Header/Header'
 import Input from './Components/Input/Input'
+import Footer from './Components/Footer/Footer'
+
 
 
 class App extends Component {
@@ -64,6 +66,14 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
+  editEvent = (id, editedEvent) => {
+    Axios.put(`/api/events/${id}`, editedEvent).then( res => {
+      this.setState({
+        events: res.data
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -73,16 +83,18 @@ class App extends Component {
           return (
             <div>
               <Category 
+              editEvent={this.editEvent}
               deleteEvent={this.deleteEvent} 
               key={category.id} 
               id={category.id} 
               deleteCategory={this.deleteCategory} 
               events={this.state.events} 
               category={category.category}/>
-              
+
             </div>
           )
         })}
+        <Footer />
       </div>
     );
   }
