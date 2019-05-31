@@ -26,10 +26,6 @@ class Input extends Component {
         console.log(this.state)
     }
 
-    
-        
-        
-
     handleEditEventClick = () => {
         let editedEvent = this.state
         this.props.editEvent(this.props.id, editedEvent)
@@ -37,15 +33,6 @@ class Input extends Component {
         this.props.toggleEdit()
        
     }
-
-    // handleAddCategoryClick = () => {
-    //     let newCategory = this.state
-    //     this.props.addCategory(newCategory)
-    //     this.setState({
-    //         category: ''
-    //     })
-    //     console.log(22222222222, "hit")
-    // }
 
     render() {
         let {eventCategory, eventName, eventDate, eventNotes,filterEvents,eventPicture,category} = this.state
@@ -55,13 +42,16 @@ class Input extends Component {
             
             <div className="editContainer">
 
+                <div className="editTitle">
+                    
+                    <h1 id="newEvent " className=" title ">Edit Event</h1>
 
-                <h1 id="newEvent " className=" title ">Edit Event</h1>
+                </div>
 
                 
                 <div className="inputContainer">
 
-                    <div className="InputDiv">
+                    <div className="EditInputDiv">
 
                         <input value={eventCategory}
                         name="eventCategory"
@@ -86,7 +76,7 @@ class Input extends Component {
 
                     </div>
 
-                    <div className="InputDiv">
+                    <div className="EditInputDiv">
 
                         <input value={eventNotes}
                         name="eventNotes"
@@ -108,17 +98,19 @@ class Input extends Component {
 
                 </div>
 
-                <div id="imageDiv">
-                    <img style={{width: 300}} src={event.eventPicture} />
+                <div className="editImageDiv">
+
+                    <img id="image" src={event.eventPicture} />
+                
                 </div>
 
                 <div className="buttonDiv">
 
-                    <button onClick={() => deleteEvent(id)} class="button">Delete</button>
+                    <button className="editButtons" onClick={() => deleteEvent(id)} >Delete</button>
                     
-                    <button onClick={toggleEdit} class="button">Cancel</button>
+                    <button className="editButtons" onClick={toggleEdit} >Cancel</button>
 
-                    <button onClick={this.handleEditEventClick}>Save</button>
+                    <button className="editButtons" onClick={this.handleEditEventClick}>Save</button>
 
                    
                 

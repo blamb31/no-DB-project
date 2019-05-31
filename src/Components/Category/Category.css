@@ -1,10 +1,25 @@
-.categoryContainer {
-    padding: 10px;
+ .categoryContainer {
+    width: 100%;
+    border-radius: 15px;
+    background: #a4a4bf;
+    padding: 3%;
+    margin: 1% 0;
+    box-shadow: 10px 10px 10px black;
+
 }
+
+
 .header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: top;
 
+}
+
+#catName {
+    font-size: 2em;
+    margin: 0 0 2% 0;
 }
 
 #xImage{

@@ -1,59 +1,112 @@
-* {
+/* * {
     box-sizing: border-box;
 }
+*/
 
 .container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    border-radius: 15px;
+    margin: 1% 0;
+    box-shadow: 10px 10px 10px black;
+    background: #a4a4bf;
 
 }
+
 
 .inputContainer {
     display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-.InputDiv {
-    margin: 10px;
+.inputDivContainer {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    justify-content: space-between;
+    
+}
+.InputDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     
 }
 
 .inputBoxes {
-    margin: 25px;
+    width: 29%;
+    margin: 2% 2% 2% 2%;
 }
 
+
+
+
 .title {
-    text-decoration: underline black;
+    width: 100%;
+    color: #16235a;
+    text-decoration: underline #16235a;
     letter-spacing: 3px;
     width: 100%;
     display: flex;
-    /* justify-content: center; */
+    font-family: 'Source Code Pro', monospace;
+    justify-content: center;
     
 }
 
-#newEvent {
-    width: 60%;
+
+.newCatContainer {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-#newCategory {
-    width: 33%;
+.newCatDiv {
+    width: 100%;
     display: flex;
-    justify-content: center;
-}
-
-#search {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
-}
-
-.buttonDiv {
-    display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
 }
 
+.searchContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    padding-bottom: 3%;
+}
+
+.searchBoxes {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.buttonDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hrDiv {
+    width: 100%;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    align-content: center;
+    border-top: 1px solid #888c46;
+    margin: 3% 5%;
+    padding: 0;
+}
+
+
+.toggleTitle {
+    width: 100%;
+    background: none;
+    font-size: 2em;
+}

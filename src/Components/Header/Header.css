@@ -1,19 +1,25 @@
 .banner {
-    
+    color: #16235a;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: left;
-    border: 2px solid black;
-    margin: 10px;
+    border-radius: 15px;
+    background: #a4a4bf;
+    box-shadow: 10px 10px 10px black;
+
+
+}
+
+#imageDiv {
+    margin: 1%;
+
 }
 
 #logo {
-    width: 80px;
+    width: 100px;
+    border-radius: 15px;
 }
 
-#companyName {
-    width: 50%;
-    margin: 2%;
-    display: flex;
 
-}
+

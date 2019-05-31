@@ -17,7 +17,19 @@ let categories = [
 
 
 module.exports = {
-    read: (req, res) => res.send(categories),
+    read: (req, res) => {
+        if(req.query.categories) {
+            let queryCategories = categories.filter( category => {
+                if (category.category.includes(req.query.categories)) {
+                    return category
+                }
+            })
+        
+            res.send(queryCategories)
+        }
+        else{res.send(categories)
+        }
+    },
     create: (req, res) => {
 
         let {category} = req.body

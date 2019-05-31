@@ -1,39 +1,58 @@
-.editContainer {
+ .editContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-
 }
 
-.title{
+.editTitle {
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
+
+
+
 
 .inputContainer {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.inputDiv {
+
+
+.EditInputDiv {
     width: 100%;
-    /* margin: 10px; */
+    display: flex;
+    justify-content: center;
 }
 
-.inputBoxes {
-    width: 100%;
-}
 
-#imageDiv {
+.editImageDiv {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1%;
 }
 
 #image {
-    width: 300;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 88px 5px rgb(128, 128, 128);
 }
 
+.buttonDiv {
+    width: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.editButtons {
+    margin: 2%;
+    width: 15%;
+    height: 10%;
+}
