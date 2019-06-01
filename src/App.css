@@ -35,6 +35,8 @@ button {
     border: none;
     padding: 15px;
     width: 15%;
+    display: flex;
+    justify-content: center;
 }
 
 button:focus {
