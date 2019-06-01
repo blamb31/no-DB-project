@@ -95,7 +95,10 @@ class App extends Component {
       <div className="App">
         <Header />
         <Input filterCategories={this.searchCategories} filterEvents={this.searchEvents} addCategory={this.addCategory} addEvent={this.addEvent} />
-        {this.state.categories.map( category => {
+        {this.state.categories.sort((a,b) => {
+          return (a.category > b.category) ? 1 : -1
+        }).map( category => {
+          console.log(777, this.state.categories)
           return (
             <div>
               <Category 
