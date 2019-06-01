@@ -39,7 +39,7 @@ class App extends Component {
       this.setState({
         events: res.data
       })
-    })
+    }).catch(err => console.log(err))
   }
 
   searchCategories = searchKeyword => {
@@ -47,7 +47,7 @@ class App extends Component {
       this.setState({
         categories: res.data
       })
-    })
+    }).catch(err => console.log(err))
   }
 
   addEvent = (newEvent) => {
@@ -87,7 +87,7 @@ class App extends Component {
       this.setState({
         events: res.data
       })
-    })
+    }).catch(err => console.log(err))
   }
 
   

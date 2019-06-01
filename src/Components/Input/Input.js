@@ -15,9 +15,9 @@ class Input extends Component {
             eventPicture:'',
             /* New*/category: '',
             filterCategories: '',
-            newEventDisplay: true,
-            newCategoryDisplay: true,
-            searchDisplay: true,
+            newEventDisplay: false,
+            newCategoryDisplay: false,
+            searchDisplay: false,
 
         }
     }
@@ -85,91 +85,7 @@ class Input extends Component {
         let {eventCategory, eventName, eventDate, eventNotes,filterEvents,eventPicture,category, filterCategories} = this.state
         return(
 
-            <div className="container">
-
-                {(this.state.newEventDisplay) ?
-
-                
-                <div className="inputContainer">
-
-                    <div className="title">
-
-                        <button onClick={this.toggleEditFields} name='newEventDisplay' className=" toggleTitle title">New Event</button>
-
-                    </div>
-
-                    <div className="inputDivContainer">
-
-                        <div className="InputDiv">
-
-                            <input value={eventCategory}
-                            name="eventCategory"
-                            type='text' 
-                            placeholder='Category'
-                            className="inputBoxes"
-                            onChange={this.handleChange}  />
-
-                            <input value={eventName}
-                            name="eventName"
-                            type='text' 
-                            placeholder='Event Name'
-                            className="inputBoxes" 
-                            onChange={this.handleChange} />
-
-                            <input value={eventDate}
-                            name="eventDate"
-                            type='text' 
-                            placeholder='Event Date (YYYY/MM/DD)'
-                            className="inputBoxes" 
-                            onChange={this.handleChange} />
-
-                        </div>
-
-                        <div className="InputDiv">
-
-                            <input value={eventPicture}
-                            name="eventPicture"
-                            type='text' 
-                            placeholder='Picture URL'
-                            className="inputBoxes" 
-                            onChange={this.handleChange} />
-
-                            <input value={eventNotes}
-                            name="eventNotes"
-                            type='text' 
-                            placeholder='Notes'
-                            className="inputBoxes" 
-                            onChange={this.handleChange} />
-
-                            
-
-                            
-                        </div>
-
-                        <div class="buttonDiv">
-                            <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
-
-                        </div>
-
-                    </div>
-                
-                    <hr />
-                </div>
-
-                : 
-
-                <div className="inputContainer">
-
-                     <div className="title">
-
-                        <button name='newEventDisplay' onClick={this.toggleEditFields} className="toggleTitle title">New Event</button>
-
-                    </div>
-
-                </div>
-                }
-
-                
+            <div className="container">                
 
                 <div className="newCatContainer">
 
@@ -212,6 +128,88 @@ class Input extends Component {
                     }
 
                 </div>
+
+                {(this.state.newEventDisplay) ?
+
+                
+                    <div className="inputContainer">
+
+                        <div className="title">
+
+                            <button onClick={this.toggleEditFields} name='newEventDisplay' className=" toggleTitle title">New Event</button>
+
+                        </div>
+
+                        <div className="inputDivContainer">
+
+                            <div className="InputDiv">
+
+                                <input value={eventCategory}
+                                name="eventCategory"
+                                type='text' 
+                                placeholder='Category'
+                                className="inputBoxes"
+                                onChange={this.handleChange}  />
+
+                                <input value={eventName}
+                                name="eventName"
+                                type='text' 
+                                placeholder='Event Name'
+                                className="inputBoxes" 
+                                onChange={this.handleChange} />
+
+                                <input value={eventDate}
+                                name="eventDate"
+                                type='text' 
+                                placeholder='Event Date (YYYY/MM/DD)'
+                                className="inputBoxes" 
+                                onChange={this.handleChange} />
+
+                            </div>
+
+                            <div className="InputDiv">
+
+                                <input value={eventPicture}
+                                name="eventPicture"
+                                type='text' 
+                                placeholder='Picture URL'
+                                className="inputBoxes" 
+                                onChange={this.handleChange} />
+
+                                <input value={eventNotes}
+                                name="eventNotes"
+                                type='text' 
+                                placeholder='Notes'
+                                className="inputBoxes" 
+                                onChange={this.handleChange} />
+
+                                
+
+                                
+                            </div>
+
+                            <div class="buttonDiv">
+                                <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
+
+                            </div>
+
+                        </div>
+
+                        <hr />
+                    </div>
+
+                    : 
+
+                    <div className="inputContainer">
+
+                        <div className="title">
+
+                            <button name='newEventDisplay' onClick={this.toggleEditFields} className="toggleTitle title">New Event</button>
+
+                        </div>
+
+                    </div>
+                }
                 
 
                 { (this.state.searchDisplay) ?
