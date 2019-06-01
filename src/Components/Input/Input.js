@@ -17,6 +17,7 @@ class Input extends Component {
             filterCategories: '',
             newEventDisplay: true,
             newCategoryDisplay: true,
+            searchDisplay: true,
 
         }
     }
@@ -168,6 +169,7 @@ class Input extends Component {
                 </div>
                 }
 
+                
 
                 <div className="newCatContainer">
 
@@ -211,15 +213,23 @@ class Input extends Component {
 
                 </div>
                 
+
+                { (this.state.searchDisplay) ?
+
                 <div className="searchContainer">
 
-                    
-
                         <div>
-                            <h1 className="title" id="search">Search</h1>
+                            <button name="searchDisplay" onClick={this.toggleEditFields} className="title toggleTitle" id="search">Search</button>
                         </div>
 
                     <div className="searchBoxes">
+                        <input 
+                        value={filterCategories}
+                        name="filterCategories"
+                        type='text' 
+                        placeholder='Search Categories'
+                        className="inputBoxes" 
+                        onChange={this.handleChange} />
                         
                         <input 
                         value={filterEvents}
@@ -229,26 +239,31 @@ class Input extends Component {
                         className="inputBoxes" 
                         onChange={this.handleChange} />
 
-                        <input 
-                        value={filterCategories}
-                        name="filterCategories"
-                        type='text' 
-                        placeholder='Search Categories'
-                        className="inputBoxes" 
-                        onChange={this.handleChange} />
                     </div>
 
                     <div className="buttonDiv">
 
 
 
-                        <button className="buttons" onClick={this.handleSearch}>Search</button>
+                        <button  className="buttons" onClick={this.handleSearch}>Search</button>
 
 
                     
                     </div>
 
                 </div>
+                    :
+
+                    <div className="searchContainer">
+
+                        <button name="searchDisplay" onClick={this.toggleEditFields} className="title toggleTitle" id="search">Search</button>
+                 
+                    </div>
+                
+
+                }
+
+
 
             </div>
             

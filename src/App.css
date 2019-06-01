@@ -26,7 +26,7 @@ input::placeholder {
 input:focus {
     background: rgb(212, 207, 210);
     color: #16235a;
-    border: none;
+    outline: none;
 }
 
 button {
@@ -39,6 +39,11 @@ button {
 
 button:focus {
     outline: none;
+    background: rgb(212, 207, 210);
+}
+
+button:active{
+    background: rgb(212, 207, 210)
 }
 
 button:hover, img:hover {
