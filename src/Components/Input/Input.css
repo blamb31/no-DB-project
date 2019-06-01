@@ -110,3 +110,9 @@ hr {
     background: none;
     font-size: 2em;
 }
+
+.closedHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

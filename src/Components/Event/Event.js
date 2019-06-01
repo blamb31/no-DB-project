@@ -45,6 +45,7 @@ class Event extends Component{
                         :
                         
                         <div className="eventContainer">
+
                             <div className="postContent">
 
                                 <div className="eventTextDiv" >
@@ -54,7 +55,7 @@ class Event extends Component{
                                         <h3>
 
                                             {eventName}  
-                                            
+
                                         </h3>
 
                                     </button>

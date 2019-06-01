@@ -252,13 +252,14 @@ class Input extends Component {
                     </div>
 
                 </div>
-                    :
 
-                    <div className="searchContainer">
+                :
 
-                        <button name="searchDisplay" onClick={this.toggleEditFields} className="title toggleTitle" id="search">Search</button>
+                <div className="searchContainer">
+
+                    <button name="searchDisplay" onClick={this.toggleEditFields} className="title toggleTitle" id="search">Search</button>
                  
-                    </div>
+                </div>
                 
 
                 }

@@ -15,7 +15,7 @@
 .header {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: top;
 
 }
@@ -43,4 +43,18 @@
 }
 .toggleTitle:active {
     background: none;
+}
+
+#closedCatName {
+    color: #16235a;
+    text-decoration: underline #16235a;
+    letter-spacing: 3px;
+    display: flex;
+    font-family: 'Source Code Pro', monospace;
+    justify-content: left;
+    background: none;
+    font-size: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: left;
 }

@@ -9,7 +9,7 @@ class Category extends Component {
         super(props)
 
         this.state = {
-            showEvents: true
+            showEvents: false
         }
 
     }
@@ -74,9 +74,11 @@ class Category extends Component {
 
                     :
 
-                    <header  className="header">
+                    <header  className="closedHeader">
 
-                        <button onClick={this.toggleShowEvents} id="catName" className="toggleTitle title">{`${category}`}</button>
+                        <button onClick={this.toggleShowEvents} id="closedCatName" className=" ">{`${category}`}</button>
+                        <img onClick={this.handleDeleteCategoryClick} id="xImage" src={xImage}data />
+
 
                     </header>
 
