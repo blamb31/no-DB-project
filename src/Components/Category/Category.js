@@ -8,6 +8,10 @@ class Category extends Component {
     constructor(props) {
         super(props)
 
+        this.state = {
+            showEvents: true
+        }
+
     }
 
     handleDeleteCategoryClick = () => {
@@ -21,7 +25,11 @@ class Category extends Component {
         deleteEvent(id)
     }
 
-    
+    toggleShowEvents = () => {
+        this.setState({
+          showEvents: !this.state.showEvents
+        })
+      }
 
     render() {
         let {events, category, editEvent} = this.props
@@ -49,15 +57,30 @@ class Category extends Component {
 
         return(
             <section className="categoryContainer" >
-                <header className="header">
-                    <h1 id="catName">{`Category: ${category}`}</h1>
-                    <img onClick={this.handleDeleteCategoryClick} id="xImage" src={xImage}data />
-                </header>
-                <div>
-                    {filteredEvents}
-                </div>
 
+                {(this.state.showEvents) ?
 
+                    <div className="showCatContainer">
+
+                        <header className="header">
+                            <button onClick={this.toggleShowEvents} id="catName" className="toggleTitle title">{`${category}`}</button>
+                            <img onClick={this.handleDeleteCategoryClick} id="xImage" src={xImage}data />
+                        </header>
+                        <div>
+                            {filteredEvents}
+                        </div>
+
+                    </div>
+
+                    :
+
+                    <header  className="header">
+
+                        <button onClick={this.toggleShowEvents} id="catName" className="toggleTitle title">{`${category}`}</button>
+
+                    </header>
+
+                }
             </section>
         )
 

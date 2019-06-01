@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.ShowingEvents {
+    width: 100%
+}
+
 .postContent {
     width: 100%;
     display: flex;
@@ -27,7 +31,18 @@
 }
 
 .eventText {
+    display: flex;
+    justify-content: left;
+    background: none;
     width: 100%;
+    padding: 0;
+}
+
+.eventText:focus {
+    background: none;
+}
+.eventText:active {
+    background: none;
 }
 
 .eventPicDiv {
@@ -49,6 +64,14 @@
     display: flex;
     justify-content: space-around;
    
+}
+
+.notShowingEvents {
+    width: 100%;
+}
+
+.notShowingEventsTitle {
+    width: 100%;
 }
 
 .eventButton {

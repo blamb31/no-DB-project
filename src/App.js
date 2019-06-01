@@ -15,7 +15,7 @@ class App extends Component {
 
     this.state = {
       categories:[],
-      events: []
+      events: [],
 
     }
   }
@@ -89,6 +89,8 @@ class App extends Component {
       })
     })
   }
+
+  
 
   render() {
     return (
