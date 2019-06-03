@@ -61,15 +61,30 @@ class Event extends Component{
                                     </button>
 
                                     <h4 className="eventText"> {eventDate}</h4>
-                                    <p className="eventText"> <span className="eventTitle">Notes:</span> { eventNotes}</p>
+
+                                    { (eventNotes) ?
+
+                                        <p className="eventText"> <span className="eventTitle">Notes:</span> { eventNotes}</p>
+                                    
+                                    :
+
+                                        <p></p>
+                                    }
 
                                 </div>
 
                                 
 
                                 <div className="eventPicDiv" >
+
+                                    { (eventPicture) ?
+                                        <img className="eventPic" src={eventPicture} />
+
+                                    :
+
+                                        <div></div>
+                                    }
                                     
-                                    <img className="eventPic" src={eventPicture} />
 
                                 </div>
 

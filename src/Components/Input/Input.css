@@ -116,3 +116,7 @@ hr {
     justify-content: space-between;
     align-items: center;
 }
+
+.searchButtons {
+    margin: 0 2%;
+}

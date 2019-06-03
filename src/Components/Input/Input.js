@@ -73,6 +73,15 @@ class Input extends Component {
         })
     }
 
+    handleCancelSearch = () => {
+        this.props.filterCategories('')
+        this.props.filterEvents('')
+        this.setState({
+            filterEvents: '',
+            filterCategories: ''
+        })
+    }
+
     toggleEditFields = event=> {
         let {name} = event.target
 
@@ -104,7 +113,16 @@ class Input extends Component {
                             onChange={this.handleChange} />
                             
 
-                            <button className="buttons" onClick={this.handleAddCategoryClick}>Add New Category</button>
+                            {(category) ?
+
+                                <button className="buttons" onClick={this.handleAddCategoryClick}>Add New Category</button>
+                           
+                            : 
+                                
+                                <button className="buttons" >Add New Category</button>
+                                
+                            }
+
                             <div className="hrDiv">
 
                                 <hr />
@@ -189,7 +207,16 @@ class Input extends Component {
                             </div>
 
                             <div class="buttonDiv">
-                                <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
+
+                                {(eventCategory && eventName) ?
+                                    <button className="buttons" onClick={this.handleAddEventClick}>Add New Event</button>
+
+                                :
+
+                                    <button className="buttons" >Add New Event</button>
+                                    
+                                }
+                                
 
                             </div>
 
@@ -243,7 +270,9 @@ class Input extends Component {
 
 
 
-                        <button  className="buttons" onClick={this.handleSearch}>Search</button>
+                        <button  className="buttons searchButtons" onClick={this.handleSearch}>Search</button>
+
+                        <button  className="buttons searchButtons" onClick={this.handleCancelSearch}>Cancel</button>
 
 
                     
@@ -255,8 +284,13 @@ class Input extends Component {
 
                 <div className="searchContainer">
 
-                    <button name="searchDisplay" onClick={this.toggleEditFields} className="title toggleTitle" id="search">Search</button>
-                 
+                    <button 
+                    name="searchDisplay" 
+                    onClick={this.toggleEditFields} 
+                    className="title toggleTitle" 
+                    id="search">Search</button>
+
+
                 </div>
                 
 

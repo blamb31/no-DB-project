@@ -9,7 +9,7 @@
     max-width: 100vw;
     height: 100%;
     padding: 2%;
-    background: #2a3457
+    background: #2a3457 
 }
 input {
     background: #f2eaeD;
@@ -41,7 +41,6 @@ button {
 
 button:focus {
     outline: none;
-    background: rgb(212, 207, 210);
 }
 
 button:active{
