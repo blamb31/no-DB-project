@@ -64,7 +64,7 @@ class Event extends Component{
 
                                     { (eventNotes) ?
 
-                                        <p className="eventText"> <span className="eventTitle">Notes:</span> { eventNotes}</p>
+                                        <p className="eventText"> <span className="eventTitle">Notes</span> { `: ${eventNotes}`}</p>
                                     
                                     :
 
